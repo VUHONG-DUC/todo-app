@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ToDoリストアプリ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <h1>ToDoリストアプリ</h1>
+    </header>
+    <!-- タスク追加セクション -->
+    <section class="task-add">
+        <input type="text" id="task-input" placeholder="タスクを入力してください" maxlength="50">
+        <button id = "add-btn">追加</button>
+        <p id = "error-msg" class="error-msg"></p>
+    </section>
+    <!-- タスクリスト表示セクション -->
+     <section class="task-list">
+        <ul id="task-list"></ul>
+     </section>
+    <!-- タスク情報表示セクション -->
+     <section class="task-info">
+        <p id="task-info"></p>
+     </section>
+     <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,222 @@
+/* 全体の基本スタイル */
+body {
+font-family: Arial, sans-serif;
+background-color: #f8f9fa;
+color: #333;
+max-width: 600px;
+margin: 0 auto;
+padding: 20px;
+}
+/* ヘッダーのスタイル */
+header {
+background-color: #007bff;
+color: #fff;
+padding: 20px;
+text-align: center;
+border-radius: 4px;
+margin-bottom: 20px;
+}
+/* タスク追加セクション */
+.task-add {
+display: flex;
+align-items: center;
+gap: 8px;
+margin-bottom: 20px;
+}
+.task-add input[type='text'] {
+padding: 8px;
+border: 1px solid #ccc;
+border-radius: 4px;
+flex: 1;
+transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.task-add input[type='text']:focus {
+border-color: #80bdff;
+box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+outline: none;
+}
+.task-add button {
+padding: 8px 16px;
+background-color: #28a745;
+color: #fff;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+.task-add button:hover {
+background-color: #218838;
+}
+.error-msg {
+color: red;
+font-size: 14px;
+margin-top: 4px;
+display: block;
+visibility: visible;
+opacity: 1;
+}
+.error-msg.active {
+visibility: visible;
+opacity: 1;
+}
+/* タスクリスト表示セクション */
+.task-list ul {
+list-style: none;
+padding: 0;
+margin-top: 10px;
+}
+.task-list li {
+padding: 10px;
+background-color: #fff;
+border-radius: 4px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 8px;
+}
+/* タスク情報表示セクション */
+.task-info {
+text-align: center;
+font-size: 14px;
+color: #666;
+margin-top: 12px;
+}
+/* 削除ボタンの基本スタイル */
+.delete-btn {
+background-color: #dc3545;
+color: #fff;
+border: none;
+padding: 4px 8px;
+border-radius: 4px;
+cursor: pointer;
+}
+/* 削除ボタンのホバー時のスタイル */
+.delete-btn:hover {
+background-color: #c82333;
+}
+/* 完了ボタンを左側に寄せる場合は、task-listも修正 */
+.task-list li {
+padding: 10px;
+background-color: #fff;
+border-radius: 4px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+display: flex;
+align-items: center;
+margin-bottom: 8px;
+}
+/* タスク名を左に固定、最大幅を占める */
+.task-list li span {
+flex-grow: 1;
+}
+/* 完了ボタンを右側（削除ボタンの左隣）に配置 */
+.task-list li .toggle-btn {
+order: 1;
+margin: 4px;
+}
+/* 削除ボタンを一番右に配置 */
+.task-list li .delete-btn {
+order: 2;
+margin: 4px;
+}
+/* タスクが完了状態になったときのスタイル */
+.completed {
+text-decoration: line-through;
+color: #999;
+}
+/* 完了切替ボタンの基本スタイル（ティール系） */
+.toggle-btn {
+background-color: #17a2b8; /* 明るい青緑色（ティール） */
+color: #fff;
+border: none;
+padding: 4px 8px;
+border-radius: 4px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+/* 完了切替ボタンのホバー時のスタイル */
+.toggle-btn:hover {
+background-color: #138496; /* ホバー時に濃くなる青緑 */
+}
+#error-msg {
+color: red;
+margin-top: 4px;
+font-size: 14px;
+}
+/* スマートフォン向け（画面幅 600px 以下） */
+@media (max-width: 600px) {
+.task-add {
+flex-direction: column;
+align-items: stretch;
+}
+.task-add button, .task-add input {
+width: 100%;
+margin-bottom: 8px;
+}
+
+  .task-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-list li .toggle-btn,
+  .task-list li .delete-btn {
+    width: 100%;
+    margin: 4px 0;
+  }
+
+  .task-info {
+    font-size: 13px;
+  }
+}
+/* タブレット向け（画面幅 601px ～ 1024px） */
+@media (min-width: 601px) and (max-width: 1024px) {
+body {
+    padding: 20px;
+  }
+
+  header {
+    font-size: 20px;
+    padding: 20px;
+  }
+
+  .task-add input,
+  .task-add button {
+    font-size: 16px;
+  }
+
+  .task-list li {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .task-info {
+    font-size: 15px;
+  }
+}
+/* PC向け（画面幅 1025px 以上） */
+@media (min-width: 1025px) {
+    body {
+    max-width: 800px;
+    padding: 24px;
+  }
+
+  header {
+    font-size: 22px;
+    padding: 24px;
+  }
+
+  .task-add input,
+  .task-add button {
+    font-size: 18px;
+  }
+
+  .task-list li {
+    font-size: 18px;
+    padding: 12px;
+  }
+
+  .task-info {
+    font-size: 16px;
+  }
+}
